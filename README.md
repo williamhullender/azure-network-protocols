@@ -113,22 +113,29 @@ Next ping a random website.
 
 Observe the traffic between the VM and the website.
 
-Now we are going to configure a Firewall (Network Security Group). Using the windows VM, initiate a continuous ping to the Ubuntu VM.
+Now we are going to configure a Firewall (Network Security Group). Using the Windows VM, initiate a continuous ping to the Ubuntu VM.
 
 ![image](https://github.com/user-attachments/assets/dd723c85-92ec-4633-b97a-e8bb0ea1dbf2)
 
-Now go to Azure
+Now go to Azure, go to virtual machines, click on the Linux-vm, then settings, click Networking, then click Linux-vm-nsg.
 
+![image](https://github.com/user-attachments/assets/f718a976-fa45-44f3-865c-05790152e6d7)
 
+Then click settings -> inbound security rules -> add.
 
+![image](https://github.com/user-attachments/assets/eaae609a-c7ff-4649-bdcb-8f1e8cd06ef2)
 
+Then input the following, and then click add.
 
+![image](https://github.com/user-attachments/assets/15535650-16fc-4070-9fe4-82233c979b18)
 
+![image](https://github.com/user-attachments/assets/86e4fde1-63fc-4761-b99b-a202e2d4f9df)
 
+You can observe that the rule was added.
 
+![image](https://github.com/user-attachments/assets/62a932e9-7b47-4c2a-8273-16e5bd0d1747)
 
-
-
+Now go back to the windows VM.
 
 
 
