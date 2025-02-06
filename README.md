@@ -135,12 +135,74 @@ You can observe that the rule was added.
 
 ![image](https://github.com/user-attachments/assets/62a932e9-7b47-4c2a-8273-16e5bd0d1747)
 
-Now go back to the windows VM.
+Now go back to the windows VM powershell.
 
+![image](https://github.com/user-attachments/assets/b184661e-8122-482a-a8bf-8bb625c90db9)
 
+You can see the rule has taken effect because the pings are unsuccessful.
 
+If you go to Wireshark, you can see the new icmp packets are unsuccessful.
 
+![image](https://github.com/user-attachments/assets/331655b3-2b5a-4115-85dd-7c2c0dc515bb)
 
+Now you can go back into the Firewall (Network Security Group) settings for the Linux VM, and re-enable icmp traffic by deleting the rule we made.
 
+Now go back into the Windows vm and observe Wireshark and powershell. Notice how once the security rule has taken efect, the icmp packets are now successful.
 
+Now we can stop the ping by typing [ctrl + c] in powershell.
 
+Next we can observe SSH traffic in Wireshark. In Wireshark, click the red square followed by the blue fin again to restart the packet capture, theres no need to save.
+
+Next filter only for SSH traffic.
+
+![image](https://github.com/user-attachments/assets/8a464778-6cc0-4380-96ea-f8c1cd81583d)
+
+Now in the Windows VM, we can SSH into the Ubuntu VM through powershell. In powershell, run the command ssh (labuser@10.0.0.5). Replace "labuser" with the username you used for your Ubuntu VM when setting it up, and replace "10.0.0.5" with your Ubuntu VM's private IP address.
+
+After typing the command above hit enter, then type yes and hit enter, then type in the password associated with your VM and hit enter.
+
+If done successfully you will notice the user has changed.
+
+![image](https://github.com/user-attachments/assets/595b79e5-d035-496e-b765-d901fc020098)
+
+Now observe the traffic populated in Wireshark.
+
+Now type commands in powershell and observe the traffic populated in Wireshark.
+
+![image](https://github.com/user-attachments/assets/26f5c741-b724-4f4f-8f06-728476cb6642)
+
+Now you can exit the ssh connection by typing exit in powershell and hitting enter.
+
+![image](https://github.com/user-attachments/assets/8f6251aa-4a8f-4d33-9186-8490fa3d2077)
+
+Now we can observe DHCP traffic. In Wireshark filter only for dhcp.
+
+![image](https://github.com/user-attachments/assets/90bac843-174b-4288-b672-ff38b5313d6c)
+
+Now, run powershell as a administrator and enter the command 
+
+![image](https://github.com/user-attachments/assets/720110ff-6175-4e67-be06-95708c13ea5f)
+
+Observe the DHCP traffic populated in Wireshark.
+
+![image](https://github.com/user-attachments/assets/cf3120f5-99db-49d2-b952-56146831496d)
+
+Now we can observe DNS traffic. In Wireshark filter only for DNS traffic.
+
+![image](https://github.com/user-attachments/assets/238f5129-b6c7-4615-b446-b553b268b7ab)
+
+Now in powershell type the command nslookup www.google.com
+
+![image](https://github.com/user-attachments/assets/72a640fb-9aad-41d4-b0bd-efaae9a7cfea)
+
+Notice the traffic populated in Wireshark.
+
+![image](https://github.com/user-attachments/assets/a6a1cc09-13e7-4314-b3ee-b4efac0bc5ac)
+
+Now we can look at RDP traffic. In Wireshark filter for "tcp.port == 3389"
+
+![image](https://github.com/user-attachments/assets/4bea01ea-7d48-4fdf-a4d5-d6205beba4b9)
+
+Notice how it is constantly populating, that is because Remote Desktop Protocol is constantly showing you a live stream from one computer to another, this results in constant traffic being transmitted.
+
+Congratulations! We have configured 2 VMs, setup Wireshark, observed network traffic, and configured a firewall (Network Security Group).
