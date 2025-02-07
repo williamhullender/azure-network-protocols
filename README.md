@@ -40,7 +40,7 @@ The first thing you want to do is go to https://portal.azure.com/ and create 2 v
 
 When creating the first VM, create a new resource group and remember the name. Then, under the Networking tab, create a new virtual network and remember the name for when you create the second VM.
 
-For the second VM, use Ubuntu. Then, ensure that both VMs are in the same resource group and virtual network.
+For the second VM, use Ubuntu. Then, ensure both VMs are in the same resource group and virtual network.
 
 </p>
 <br />
@@ -50,7 +50,7 @@ For the second VM, use Ubuntu. Then, ensure that both VMs are in the same resour
 </p>
 <br />
 
-Next, we are going to connect to the Windows VM using Remote Desktop, if using MAC you will need to download the Windows app, if using Windows it is already installed. Once Remote Desktop is loaded, you will need the public IPv4 addresses of the Windows VM to connect. This can be found on the Virtual Machine page in Azure.
+Next, we will connect to the Windows VM using Remote Desktop, if using MAC you will need to download the Windows app, if using Windows it is already installed. Once Remote Desktop is loaded, you will need the public IPv4 addresses of the Windows VM to connect. This can be found on the Virtual Machine page in Azure.
 
 </p>
 <br />
@@ -148,7 +148,7 @@ Now open Wireshark, and click start packet capture (Blue Fin)
 
 Notice all the network traffic populating.
 
-Now we can filter for ICMP traffic only, in the text box input icmp and hit enter.
+Now we can filter for ICMP (Internet Control Message Protocol) traffic only, in the text box input icmp and hit enter.
 
 </p>
 <br />
@@ -267,7 +267,7 @@ You can observe that the rule was added.
 </p>
 <br />
 
-Now go back to the windows VM powershell.
+Now go back to the Windows VM powershell.
 
 </p>
 <br />
@@ -295,9 +295,9 @@ Now go back into the Windows VM and observe Wireshark and Powershell. Notice how
 
 Now we can stop the ping by typing [ctrl + c] in PowerShell.
 
-Next, we can observe SSH traffic in Wireshark. In Wireshark, click the red square followed by the blue fin again to restart the packet capture, there's no need to save.
+Next, we can observe SSH traffic in Wireshark. In Wireshark, click the red square icon followed by the blue fin icon again to restart the packet capture, there's no need to save.
 
-Next filter only for SSH traffic.
+Next filter only for SSH (Secure Shell) traffic.
 
 </p>
 <br />
@@ -343,7 +343,7 @@ Now you can exit the SSH connection by typing exit in Powershell and hitting ent
 </p>
 <br />
 
-Now we can observe DHCP traffic. In Wireshark filter only for dhcp.
+Now we can observe DHCP (Dynamic Host Configuration Protocol) traffic. In Wireshark filter only for dhcp.
 
 </p>
 <br />
@@ -373,7 +373,7 @@ Observe the DHCP traffic populated in Wireshark.
 </p>
 <br />
 
-Now we can observe DNS traffic. In Wireshark filter only for DNS traffic.
+Now we can observe DNS (Domain Name System) traffic. In Wireshark filter only for DNS traffic.
 
 </p>
 <br />
@@ -403,7 +403,7 @@ Notice the traffic populated in Wireshark.
 </p>
 <br />
 
-Now we can look at RDP traffic. In Wireshark filter for "tcp.port == 3389"
+Now we can look at RDP (Remote Desktop Protocol) traffic. In Wireshark filter for "tcp.port == 3389"
 
 </p>
 <br />
